@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang=en>
+   <head>
+      <meta charset=UTF-8>
+      <title>Mountain Kick</title>
+      <link rel=stylesheet type=text/css href=style.css>
+   </head>
+   <body>
+      <svg xmlns=http://www.w3.org/2000/svg style="display: none;">
+         <symbol id=icon-facebook viewbox="0 0 6 12">
+            <path fill=#FFF fill-rule=evenodd d="M6 .086538v1.903847H4.909722c-.398148 0-.666666.086538-.805555.259615-.13889.173077-.208334.432692-.208334.778846v1.36298h2.034723l-.270834 2.134616h-1.76389V12h-2.125V6.526442H0V4.391827h1.770833V2.819712c0-.89423.24074-1.58774.722223-2.08053C2.974536.246395 3.61574 0 4.416666 0 5.097223 0 5.625.028846 6 .086538z"></path>
+         </symbol>
+         <symbol id=icon-twitter viewbox="0 0 14 12">
+            <path fill=#FFF fill-rule=evenodd d="M12.560914 2.91472c.005922.08528.008883.2132.008883.383757 0 .791878-.11252 1.582234-.337563 2.371066-.225043.788833-.567048 1.545685-1.026016 2.27056-.458968.724872-1.005287 1.365988-1.63896 1.92335-.63367.55736-1.39763 1.00203-2.291877 1.33401-.894246.33198-1.850676.497968-2.86929.497968-1.604906 0-3.073603-.441623-4.40609-1.324872.207276.024366.43824.03655.692893.03655 1.332488 0 2.519882-.420306 3.562183-1.260915-.621827-.012183-1.17851-.20863-1.67005-.58934-.49154-.38071-.829104-.866498-1.01269-1.45736.19543.030456.376057.045685.541877.045685.254653 0 .506345-.033503.755076-.100508-.663283-.1401-1.212564-.479695-1.647843-1.018782-.43528-.539086-.65292-1.164974-.65292-1.877665v-.036548c.402708.231472.835026.356345 1.296955.37462-.390863-.26802-.701776-.618275-.93274-1.050762C.701776 3.003046.586293 2.53401.586293 2.028426c0-.53604.130288-1.032487.390863-1.48934.716582.907614 1.58862 1.63401 2.616117 2.179188 1.027496.545178 2.127538.848223 3.300127.909137-.047376-.23147-.071065-.456852-.071065-.67614 0-.816245.279822-1.512184.839467-2.087818C8.221447.287817 8.898054 0 9.691624 0c.829104 0 1.52792.31066 2.096447.93198.645517-.12792 1.25254-.365483 1.821067-.71269-.21912.700507-.639594 1.24264-1.26142 1.626395.55076-.060913 1.101522-.213198 1.652283-.456853-.396785.596955-.87648 1.105584-1.439086 1.52589z"></path>
+         </symbol>
+         <symbol id=icon-insta viewbox="0 0 12 12">
+            <path fill=#FFF fill-rule=evenodd d="M10.640625 10.140625v-5.0625H9.585937c.104167.328125.15625.66927.15625 1.023438 0 .65625-.166666 1.261718-.5 1.816406-.333333.554686-.786458.993488-1.359374 1.316405-.572917.322917-1.197917.484375-1.875.484375-1.026042 0-1.903646-.352865-2.632813-1.058594-.729167-.70573-1.09375-1.558594-1.09375-2.558594 0-.354166.052083-.695312.15625-1.023437H1.335937v5.0625c0 .135417.045573.248698.13672.339844.091145.091145.204426.136717.339843.136717h8.351563c.130208 0 .242187-.045572.335937-.136718.09375-.091147.140625-.204428.140625-.339845zm-2.21875-4.164063c0-.645833-.235677-1.196614-.70703-1.652343-.471355-.45573-1.040366-.683595-1.707033-.683595-.661458 0-1.227864.227865-1.699218.683594-.471354.455728-.707032 1.00651-.707032 1.652342 0 .645834.235678 1.196615.707032 1.652344.471354.45573 1.03776.683594 1.699218.683594.666667 0 1.235678-.227865 1.707032-.683594.471354-.45573.70703-1.00651.70703-1.652343zm2.21875-2.8125V1.875c0-.145833-.052083-.272135-.15625-.378906-.104167-.10677-.23177-.160157-.382813-.160157H8.742188c-.151042 0-.278646.053386-.382813.160157-.104167.10677-.15625.233073-.15625.378906v1.289063c0 .15104.052083.278645.15625.382812.104167.104167.23177.15625.382813.15625h1.359374c.151042 0 .278646-.052083.382813-.15625.104167-.104167.15625-.23177.15625-.382813zM12 1.539063v8.921876c0 .421874-.151042.783854-.453125 1.085937-.302083.302083-.664063.453125-1.085938.453125H1.539063c-.421876 0-.783855-.151042-1.085938-.453125C.151042 11.244792 0 10.882812 0 10.460937V1.539063C0 1.117187.151042.755208.453125.453124.755208.151042 1.117188 0 1.539063 0h8.921874c.421876 0 .783855.151042 1.085938.453125C11.848958.755208 12 1.117188 12 1.539063z"></path>
+         </symbol>
+         <symbol id=decor viewbox="0 0 50 8">
+            <path fill=#FFF fill-rule=evenodd d="M42.575736 6.575736h.848528l-6-6L37 .151472l-.424264.424264-6 6h.848528l-6-6L25 .151472l-.424264.424264-6 6h.848528l-6-6L13 .151472l-.424264.424264-6 6h.848528l-6-6-.848528.848528 6 6L7 7.848528l.424264-.424264 6-6h-.848528l6 6L19 7.848528l.424264-.424264 6-6h-.848528l6 6L31 7.848528l.424264-.424264 6-6h-.848528l6 6L43 7.848528l.424264-.424264 6-6-.848528-.848528"></path>
+         </symbol>
+         <symbol id=icon-mobile viewbox="140 34 12 18">
+            <path fill=#FFF fill-rule=evenodd d="M149 34h-6c-1.656 0-3 1.344-3 3v12c0 1.656 1.344 3 3 3h6c1.656 0 3-1.344 3-3V37c0-1.656-1.344-3-3-3zm-3 16.5c-.828 0-1.5-.6705-1.5-1.5s.672-1.5 1.5-1.5c.8295 0 1.5.6705 1.5 1.5s-.6705 1.5-1.5 1.5zm4.5-4.5h-9v-9h9v9z"></path>
+         </symbol>
+         <symbol id=icon-nav viewbox="0 0 28 20">
+            <g fill=none fill-rule=evenodd>
+               <path d=M0-4h28v28H0z></path>
+               <path fill=#FFF d="M0 0h28v3H0V0zm0 8h28v3H0V8zm0 9h28v3H0v-3z"></path>
+            </g>
+         </symbol>
+      </svg>
+      <header id=main-head class=main-head>
+         <div class=container>
+            <div class=row>
+               <a id=logo><img src=images/logo.png></a><!--<div class="sn">-->
+               <div class="social-info clearfix">
+                  <ul class=social>
+                     <li class=hidden-md-up>
+                        <a>
+                           <span>
+                              <svg>
+                                 <use xlink:href=#icon-mobile></use>
+                              </svg>
+                           </span>
+                        </a>
+                     </li>
+                     <li>
+                        <a>
+                           <span>
+                              <svg>
+                                 <use xlink:href=#icon-facebook></use>
+                              </svg>
+                           </span>
+                        </a>
+                     </li>
+                     <li>
+                        <a>
+                           <span>
+                              <svg>
+                                 <use xlink:href=#icon-twitter></use>
+                              </svg>
+                           </span>
+                        </a>
+                     </li>
+                     <li>
+                        <a>
+                           <span>
+                              <svg>
+                                 <use xlink:href=#icon-insta></use>
+                              </svg>
+                           </span>
+                        </a>
+                     </li>
+                     <li class="hidden-md-up icon-nav">
+                        <a>
+                           <span>
+                              <svg>
+                                 <use xlink:href=#icon-nav></use>
+                              </svg>
+                           </span>
+                        </a>
+                     </li>
+                  </ul>
+                  <a href="tel:+977 9806848760" class="phone hidden-md-down">+977 9806848760</a>
+               </div>
+               <!--/ .social-info-->
+               <div class=main-nav-wrap>
+                  <nav class=main-nav>
+                     <div class=primary-menu>
+                        <ul class=menu-primary>
+                           <li class="menu-item menu-item-has-children">
+                              <a>home</a>
+                              <ul class=sub-menu>
+                                 <li class=menu-item><a>where to go?</a></li>
+                                 <li class=menu-item><a>where to go?</a></li>
+                                 <li class=menu-item><a>where to go?</a></li>
+                              </ul>
+                           </li>
+                           <li class=menu-item><a>where to go?</a></li>
+                           <li class=menu-item><a>what to do?</a></li>
+                           <li class=menu-item><a>trip finder</a></li>
+                           <li class=menu-item><a>about us</a></li>
+                           <li class=menu-item><a>csr</a></li>
+                           <li class=menu-item><a>customize your trip</a></li>
+                        </ul>
+                     </div>
+                  </nav>
+                  <!--/.main-nav-->
+               </div>
+               <!--/.main-nav-wrap--><!--</div>--><!--/ .sn-->
+            </div>
+            <!--/.row-->
+         </div>
+         <!--/.container-->
+      </header>
+      <section class=hero-slider>
+         <div class=hero-slider__slide>
+            <picture>
+               <!--[if IE 9]>
+               <video style="display: none;">
+                  <![endif]-->
+                  <source srcset=images/uploads/slider-mobile.png media="(max-width: 480px)">
+                  <source srcset=images/uploads/ipad-home.png media="(max-width: 768px)">
+                  <!--[if IE 9]>
+               </video>
+               <![endif]--><img src=images/uploads/home-banner.png>
+            </picture>
+            <div class=slider-text-wrap>
+               <div class=container>
+                  <div class=row>
+                     <div class=slide__text>
+                        <div class=col-md-4>
+                           <h1 class=heading>EVEREST BASE CAMP TREK</h1>
+                           <p class="short-desc hidden-xs-down hidden-md-down">Trek to the foot of Mount Everest and back. You will be standing next to Everest for real, one hell of a story for lifetime.</p>
+                        </div>
+                        <div class="col-md-4 align-end">
+                           <ul class=trip__technical-desc>
+                              <li class=trip-days>days <span>16</span></li>
+                              <li class=trip-price>usd <span>1500</span></li>
+                              <li class=trip-altitude>max altitude <span>18,519<i>ft</i></span></li>
+                           </ul>
+                        </div>
+                        <div class="col-md-4 align-end"><a class="btn btn--bg btn--arrow">view details</a></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!--slider-text-wrap-->
+         </div>
+      </section>
+      <!--/.hero-slider-->
+      <section class=home-about>
+         <div class="left-box hidden-sm-down"></div>
+         <div class="right-box hidden-sm-down"></div>
+         <div class=container>
+            <div class=row>
+               <div class="section-heading col-md-6">we are <span>mountain kick</span></div>
+               <div class="content col-md-6">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a neque interdum diam dapibus tincidunt. In euismod risus nec pellentesque egestas. Morbi eget sollicitudin tortor, ac volutpat purus. Sed vestibulum elementum pharetra.</p>
+                  <a class="btn btn--border btn--arrow">more about us</a>
+               </div>
+            </div>
+            <!--/.row-->
+         </div>
+         <!--/.container-->
+      </section>
+      <!--/.home-about-->
+      <section class="destination text-center">
+         <div class=container>
+            <div class=row>
+               <div class=col-md-12>
+                  <h2 class=section-heading>WHERE TO GO?</h2>
+                  <span class="slogan decor">CHOOSE YOUR DESTINATION</span>
+               </div>
+               <div class="col-md-12 hidden-xs-down">
+                  <div class="style-boxes clearfix">
+                     <div class=box__one>
+                        <a href=#>
+                           <div class=sb>
+                              <span class=gradient-overlay></span> <img src=images/uploads/home-banner.png>
+                              <h3 class=overlay-heading>nepal</h3>
+                           </div>
+                        </a>
+                     </div>
+                     <div class=box__two>
+                        <a>
+                           <div class=sb>
+                              <span class=gradient-overlay></span> <img src=images/uploads/home-banner.png>
+                              <h3 class=overlay-heading>tibet</h3>
+                           </div>
+                        </a>
+                     </div>
+                     <div class=box__three>
+                        <a>
+                           <div class=sb>
+                              <span class=gradient-overlay></span> <img src=images/uploads/home-banner.png>
+                              <h3 class=overlay-heading>bhutan</h3>
+                           </div>
+                        </a>
+                     </div>
+                     <div class=box__four>
+                        <a>
+                           <div class=sb>
+                              <span class=gradient-overlay></span> <img src=images/uploads/home-banner.png>
+                              <h3 class=overlay-heading>india</h3>
+                           </div>
+                        </a>
+                     </div>
+                  </div>
+                  <!--/.style-boxes-->
+               </div>
+               <div class="col-xs-12 visible-xs">
+                  <div class=style-boxes-mobile>
+                     <div class=box__one>
+                        <img src=images/uploads/mobile-nepal.png>
+                        <h3 class=overlay-heading>nepal</h3>
+                     </div>
+                     <div class=box__two>
+                        <img src=images/uploads/mobile-tibet.png>
+                        <h3 class=overlay-heading>tibet</h3>
+                     </div>
+                     <div class=box__three>
+                        <img src=images/uploads/mobile-tibet.png>
+                        <h3 class=overlay-heading>bhutan</h3>
+                     </div>
+                     <div class=box__four>
+                        <img src=images/uploads/mobile-india.png>
+                        <h3 class=overlay-heading>india</h3>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!--/.row-->
+         </div>
+         <!--/.container-->
+      </section>
+      <!--/.destination-->
+      <div class="section-activities text-center">
+         <div class=container>
+            <div class=row>
+               <div class="col-md-12 col-sm-12">
+                  <h2 class=section-heading>what to do?</h2>
+                  <span class="slogan decor">AENEAN SUSCIPIT PLACERAT ARCU VEL DIGNISSIM ERAT BIBENDUM EU</span>
+                  <div class="secondary-sb clearfix">
+                     <a class="box__two box-two-third">
+                        <picture>
+                           <!--[if IE 9]>
+                           <video style="display: none;">
+                              <![endif]-->
+                              <source srcset=images/uploads/mobile-l-sb.png media="(max-width: 480px)">
+                              <!--[if IE 9]>
+                           </video>
+                           <![endif]--><img src=images/uploads/trekking.png>
+                        </picture>
+                        <h3 class=overlay-heading>Trekking</h3>
+                     </a>
+                     <!--/.box__two-->
+                     <a class=box__one>
+                        <picture>
+                           <!--[if IE 9]>
+                           <video style="display: none;">
+                              <![endif]-->
+                              <source srcset=images/uploads/mobile-sb.png media="(max-width: 480px)">
+                              <!--[if IE 9]>
+                           </video>
+                           <![endif]--><img src=images/uploads/hiking.png>
+                        </picture>
+                        <h3 class=overlay-heading>hiking</h3>
+                     </a>
+                     <!--/.box__one-->
+                     <a class=box__three>
+                        <picture>
+                           <!--[if IE 9]>
+                           <video style="display: none;">
+                              <![endif]-->
+                              <source srcset=images/uploads/mobile-sb.png media="(max-width: 480px)">
+                              <!--[if IE 9]>
+                           </video>
+                           <![endif]--><img src=images/uploads/hiking.png>
+                        </picture>
+                        <h3 class=overlay-heading>family trips</h3>
+                     </a>
+                     <!--/.box__three-->
+                     <a class=box__four>
+                        <picture>
+                           <!--[if IE 9]>
+                           <video style="display: none;">
+                              <![endif]-->
+                              <source srcset=images/uploads/mobile-sb.png media="(max-width: 480px)">
+                              <!--[if IE 9]>
+                           </video>
+                           <![endif]--><img src=images/uploads/hiking.png>
+                        </picture>
+                        <h3 class=overlay-heading>cycling</h3>
+                     </a>
+                     <!--/.box__four-->
+                     <a class=box__five>
+                        <picture>
+                           <!--[if IE 9]>
+                           <video style="display: none;">
+                              <![endif]-->
+                              <source srcset=images/uploads/mobile-sb.png media="(max-width: 480px)">
+                              <!--[if IE 9]>
+                           </video>
+                           <![endif]--><img src=images/uploads/hiking.png>
+                        </picture>
+                        <h3 class=overlay-heading>walking</h3>
+                     </a>
+                     <!--/.box__five-->
+                  </div>
+                  <!--/.secondary-sb-->
+               </div>
+            </div>
+         </div>
+      </div>
+      <!--/.activities-->
+      <section class="departure-dates text-center">
+         <div class=container>
+            <div class=row>
+               <div class=col-md-12>
+                  <h2 class=section-heading>OUR FIXED DEPATURE DATES</h2>
+                  <span class=slogan>GO WITH THE RIGHT NUMBER OF LIKE-MINDED TRAVELLERS TO MAKE NEW FRIENDS.</span>
+               </div>
+               <table class=rwd-table>
+                  <tr>
+                     <th>DEPARTING</th>
+                     <th>TRIP NAME</th>
+                     <th>DAYS</th>
+                     <th>STATUS</th>
+                     <th>COST</th>
+                     <th></th>
+                  </tr>
+                  <tr>
+                     <td data-th=DEPARTING>19th September, 2016</td>
+                     <td data-th="TRIP NAME" class=rwd-trip-name>Manaslu & Tsum Valley Trek</td>
+                     <td data-th=DAYS>12</td>
+                     <td data-th=STATUS class=booked>Booked</td>
+                     <td data-th=COST>$1,440.00</td>
+                     <td><a href=# class="btn btn--border-black btn--small">VIEW TRIP DETAIL</a></td>
+                  </tr>
+                  <tr>
+                     <td data-th=DEPARTING>19th September, 2016</td>
+                     <td data-th="TRIP NAME" class=rwd-trip-name>Manaslu & Tsum Valley Trek</td>
+                     <td data-th=DAYS>12</td>
+                     <td data-th=STATUS class=available>available</td>
+                     <td data-th=COST>Upon Request</td>
+                     <td><a href=# class="btn btn--border-black btn--small">VIEW TRIP DETAIL</a></td>
+                  </tr>
+                  <tr>
+                     <td data-th=DEPARTING>19th September, 2016</td>
+                     <td data-th="TRIP NAME" class=rwd-trip-name>Manaslu & Tsum Valley Trek</td>
+                     <td data-th=DAYS>12</td>
+                     <td data-th=STATUS class=available>available</td>
+                     <td data-th=COST>$1,440.00</td>
+                     <td><a href=# class="btn btn--border-black btn--small">VIEW TRIP DETAIL</a></td>
+                  </tr>
+               </table>
+            </div>
+         </div>
+         <div class="private-date-trip text-md-left">
+            <div class=container>
+               <div class=row>
+                  <div class=col-md-12>
+                     <h3 class=heading>CHOOSE A PRIVATE DATE</h3>
+                  </div>
+                  <div class="col-md-12 col-lg-8">
+                     <p>If you'd prefer to share this Mountain Kick holiday trip with your own group of friends, we've got good news, it's also available as a Private Adventure!, Our Private Adventure specialists are on hand to give you a quote or talk through some different options.</p>
+                     <p>Feel free to give them a call on 0208 772 3874 or Email us at <a href=mailto:info@mountainkick.com>info@mountainkick.com</a></p>
+                  </div>
+                  <div class="col-md-12 col-lg-4 text-lg-right"><a class="btn btn--bg">Request Private Date</a></div>
+               </div>
+            </div>
+         </div>
+         <!--/.private-date-trip-->
+      </section>
+      <!--/.departure-dates-->
+      <section class="top-trip text-center">
+         <div class=container>
+            <div class=row>
+               <div class=col-md-12>
+                  <h2 class=section-heading>Top trending trips right now</h2>
+                  <span class=slogan>BASED ON TRAVELLERS INTEREST</span>
+               </div>
+            </div>
+         </div>
+         <div class=packages>
+            <div class=package>
+               <figure class=package__img><img src=images/uploads/culture.JPG></figure>
+               <div class="package__desc clearfix">
+                  <span class=package__desc-price>from usd <span class=price>1,205</span></span>
+                  <div class=package__desc-title>
+                     <span>12 Days trekking to 18,519 Ft</span>
+                     <h4><a>Jiri-Lukla Everest Three Passes Trek</a></h4>
+                  </div>
+               </div>
+            </div>
+            <!--/.package-->
+            <div class=package>
+               <figure class=package__img><img src=images/uploads/culture.JPG></figure>
+               <div class="package__desc clearfix">
+                  <span class=package__desc-price>from usd <span class=price>1,205</span></span>
+                  <div class=package__desc-title>
+                     <span>12 Days trekking to 18,519 Ft</span>
+                     <h4><a>Jiri-Lukla Everest Three Passes Trek</a></h4>
+                  </div>
+               </div>
+            </div>
+            <!--/.package-->
+            <div class=package>
+               <figure class=package__img><img src=images/uploads/culture.JPG></figure>
+               <div class="package__desc clearfix">
+                  <span class=package__desc-price>from usd <span class=price>1,205</span></span>
+                  <div class=package__desc-title>
+                     <span>12 Days trekking to 18,519 Ft</span>
+                     <h4><a>Jiri-Lukla Everest Three Passes Trek</a></h4>
+                  </div>
+               </div>
+            </div>
+            <!--/.package-->
+            <div class=package>
+               <figure class=package__img><img src=images/uploads/culture.JPG></figure>
+               <div class="package__desc clearfix">
+                  <span class=package__desc-price>from usd <span class=price>1,205</span></span>
+                  <div class=package__desc-title>
+                     <span>12 Days trekking to 18,519 Ft</span>
+                     <h4><a>Jiri-Lukla Everest Three Passes Trek</a></h4>
+                  </div>
+               </div>
+            </div>
+            <!--/.package-->
+            <div class=package>
+               <figure class=package__img><img src=images/uploads/culture.JPG></figure>
+               <div class="package__desc clearfix">
+                  <span class=package__desc-price>from usd <span class=price>1,205</span></span>
+                  <div class=package__desc-title>
+                     <span>12 Days trekking to 18,519 Ft</span>
+                     <h4><a>Jiri-Lukla Everest Three Passes Trek</a></h4>
+                  </div>
+               </div>
+            </div>
+            <!--/.package-->
+            <div class=package>
+               <figure class=package__img><img src=images/uploads/culture.JPG></figure>
+               <div class="package__desc clearfix">
+                  <span class=package__desc-price>from usd <span class=price>1,205</span></span>
+                  <div class=package__desc-title>
+                     <span>12 Days trekking to 18,519 Ft</span>
+                     <h4><a>Jiri-Lukla Everest Three Passes Trek</a></h4>
+                  </div>
+               </div>
+            </div>
+            <!--/.package-->
+            <div class=package>
+               <figure class=package__img><img src=images/uploads/culture.JPG></figure>
+               <div class="package__desc clearfix">
+                  <span class=package__desc-price>from usd <span class=price>1,205</span></span>
+                  <div class=package__desc-title>
+                     <span>12 Days trekking to 18,519 Ft</span>
+                     <h4><a>Jiri-Lukla Everest Three Passes Trek</a></h4>
+                  </div>
+               </div>
+            </div>
+            <!--/.package-->
+         </div>
+         <!--/.packages-->
+      </section>
+      <!--/.top-trip-->
+      <hr class=styled-hr>
+      <section class="customize-trip text-center">
+         <div class=container>
+            <div class=row>
+               <div class=col-md-12>
+                  <span class=heading-top>Would you like to go on your own customized trip?</span>
+                  <h2 class="section-heading m-b-3">We are always there for you</h2>
+                  <a href=# class="btn btn--arrow btn--bg-border--black m-t-2">contact us</a>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!--/.customize-trip-->
+      <section class="footer-blog text-center">
+         <div class=container>
+            <div class=row>
+               <div class="col-md-12 m-b-4">
+                  <h2 class=section-heading>RECENT FROM OUR BLOG</h2>
+                  <span class=slogan>LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT. DONEC A NEQUE INTERDUM DIAM DAPIBUS TINCIDUNT.</span>
+               </div>
+               <div class="general-box col-md-4">
+                  <figure class=general-box__img><img src=images/uploads/general-img.png></figure>
+                  <div class=general-box__desc>
+                     <h6><a>TRAVEL</a></h6>
+                     <h4><a>CHoose THE PERFECT ACCOMMODATIONS</a></h4>
+                     <p>family a chance to vacation to the most exotic locations all over the world at a fraction.</p>
+                  </div>
+               </div>
+               <!--/.general-box-->
+               <div class="general-box col-md-4">
+                  <figure class=general-box__img><img src=images/uploads/general-img.png></figure>
+                  <div class=general-box__desc>
+                     <h6><a>TRAVEL</a></h6>
+                     <h4><a>CHoose THE PERFECT ACCOMMODATIONS</a></h4>
+                     <p>family a chance to vacation to the most exotic locations all over the world at a fraction.</p>
+                  </div>
+               </div>
+               <!--/.general-box-->
+               <div class="general-box col-md-4">
+                  <figure class=general-box__img><img src=images/uploads/general-img.png></figure>
+                  <div class=general-box__desc>
+                     <h6><a>TRAVEL</a></h6>
+                     <h4><a>CHoose THE PERFECT ACCOMMODATIONS</a></h4>
+                     <p>family a chance to vacation to the most exotic locations all over the world at a fraction.</p>
+                  </div>
+               </div>
+               <!--/.general-box-->
+            </div>
+         </div>
+      </section>
+      <!--/.home-blog-->
+      <footer id=footer class=footer>
+         <div class=container>
+            <div class=row>
+               <div class=col-md-12>
+                  <address class="address col-lg-3 col-md-6 col-sm-6">
+                     <h5>mountainkick pvt.ltd.</h5>
+                     P.O.Box: 25181<br>Thamel, Kathmandu, Nepal<br>Phone: +977-01-4250540<br>Cell Phone: +977-9851014405<br>Email: <a href=mailto:info@mountainkick.com>info@mountainkick.com</a>
+                  </address>
+                  <div class="subscribe-form col-lg-4 col-md-6 col-sm-6">
+                     <form method=post enctype=multipart/form-data id=gform_3>
+                        <div class=gform_heading>
+                           <h3 class=gform_title>MAILING LIST</h3>
+                           <span class=gform_description>Subscribe to our newsletter for access to new trips, travel tips and exclusive deals for your next vacation</span>
+                        </div>
+                        <div class=gform_body>
+                           <ul class=gform_fields>
+                              <li class=gfield>
+                                 <label class=gfield_label for=input_3_1>Email</label>
+                                 <div class="ginput_container ginput_container_email"><input name=input_1 id=input_3_1 type=text class=medium tabindex=1 placeholder="Your email address"></div>
+                              </li>
+                           </ul>
+                        </div>
+                        <div class="gform_footer top_label"><input type=submit id=gform_submit_button_3 class="gform_button button" value=subscribe tabindex=2></div>
+                     </form>
+                  </div>
+                  <!--/.subscribe-form-->
+                  <div class="social-media clearfix col-lg-2 col-md-4 col-sm-6">
+                     <h5>connect with mk</h5>
+                     <ul class=social>
+                        <li class=facebook>
+                           <a>
+                              <span>
+                                 <svg>
+                                    <use xlink:href=#icon-facebook></use>
+                                 </svg>
+                              </span>
+                           </a>
+                        </li>
+                        <li class=twitter>
+                           <a>
+                              <span>
+                                 <svg>
+                                    <use xlink:href=#icon-twitter></use>
+                                 </svg>
+                              </span>
+                           </a>
+                        </li>
+                        <li class=instagram>
+                           <a>
+                              <span>
+                                 <svg>
+                                    <use xlink:href=#icon-insta></use>
+                                 </svg>
+                              </span>
+                           </a>
+                        </li>
+                     </ul>
+                  </div>
+                  <!--/.social-media-->
+                  <div class="associates col-lg-3 col-md-6 col-xs-12">
+                     <h5>member of</h5>
+                     <ul>
+                        <li><a><img src=images/uploads/ntb.png></a></li>
+                        <li><a><img src=images/uploads/nma.png></a></li>
+                        <li><a><img src=images/uploads/doftourisoum.png></a></li>
+                        <li><a><img src=images/uploads/taan.png></a></li>
+                     </ul>
+                  </div>
+                  <!--/.associates-->
+               </div>
+            </div>
+         </div>
+         <!--/.container-->
+         <div class=copyright-designer>
+            <div class=container>
+               <div class=designby>Crafted by <a>Last Door Solutions</a></div>
+               <p>© 2016 <a>MountainKick</a>. All Rights Reserved</p>
+            </div>
+         </div>
+         <!--/.copyright-->
+      </footer>
+      <!--/#footer--><script type=text/javascript src=js/scripts.js></script><script type=text/javascript src=js/main.js></script>
+   </body>
+</html>

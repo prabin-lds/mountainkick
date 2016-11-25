@@ -1,0 +1,1 @@
+<h2 class="tab-heading text-lg-center" id=tab-trip-map>TRIP MAP</h2>

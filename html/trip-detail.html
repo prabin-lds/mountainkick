@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang=en>
+   <head>
+      <meta charset=UTF-8>
+      <title>Mountain Kick</title>
+      <link rel=stylesheet type=text/css href=style.css>
+   </head>
+   <body class=inner>
+      <svg xmlns=http://www.w3.org/2000/svg style="display: none;">
+         <symbol id=icon-facebook viewbox="0 0 6 12">
+            <path fill=#FFF fill-rule=evenodd d="M6 .086538v1.903847H4.909722c-.398148 0-.666666.086538-.805555.259615-.13889.173077-.208334.432692-.208334.778846v1.36298h2.034723l-.270834 2.134616h-1.76389V12h-2.125V6.526442H0V4.391827h1.770833V2.819712c0-.89423.24074-1.58774.722223-2.08053C2.974536.246395 3.61574 0 4.416666 0 5.097223 0 5.625.028846 6 .086538z"></path>
+         </symbol>
+         <symbol id=icon-twitter viewbox="0 0 14 12">
+            <path fill=#FFF fill-rule=evenodd d="M12.560914 2.91472c.005922.08528.008883.2132.008883.383757 0 .791878-.11252 1.582234-.337563 2.371066-.225043.788833-.567048 1.545685-1.026016 2.27056-.458968.724872-1.005287 1.365988-1.63896 1.92335-.63367.55736-1.39763 1.00203-2.291877 1.33401-.894246.33198-1.850676.497968-2.86929.497968-1.604906 0-3.073603-.441623-4.40609-1.324872.207276.024366.43824.03655.692893.03655 1.332488 0 2.519882-.420306 3.562183-1.260915-.621827-.012183-1.17851-.20863-1.67005-.58934-.49154-.38071-.829104-.866498-1.01269-1.45736.19543.030456.376057.045685.541877.045685.254653 0 .506345-.033503.755076-.100508-.663283-.1401-1.212564-.479695-1.647843-1.018782-.43528-.539086-.65292-1.164974-.65292-1.877665v-.036548c.402708.231472.835026.356345 1.296955.37462-.390863-.26802-.701776-.618275-.93274-1.050762C.701776 3.003046.586293 2.53401.586293 2.028426c0-.53604.130288-1.032487.390863-1.48934.716582.907614 1.58862 1.63401 2.616117 2.179188 1.027496.545178 2.127538.848223 3.300127.909137-.047376-.23147-.071065-.456852-.071065-.67614 0-.816245.279822-1.512184.839467-2.087818C8.221447.287817 8.898054 0 9.691624 0c.829104 0 1.52792.31066 2.096447.93198.645517-.12792 1.25254-.365483 1.821067-.71269-.21912.700507-.639594 1.24264-1.26142 1.626395.55076-.060913 1.101522-.213198 1.652283-.456853-.396785.596955-.87648 1.105584-1.439086 1.52589z"></path>
+         </symbol>
+         <symbol id=icon-insta viewbox="0 0 12 12">
+            <path fill=#FFF fill-rule=evenodd d="M10.640625 10.140625v-5.0625H9.585937c.104167.328125.15625.66927.15625 1.023438 0 .65625-.166666 1.261718-.5 1.816406-.333333.554686-.786458.993488-1.359374 1.316405-.572917.322917-1.197917.484375-1.875.484375-1.026042 0-1.903646-.352865-2.632813-1.058594-.729167-.70573-1.09375-1.558594-1.09375-2.558594 0-.354166.052083-.695312.15625-1.023437H1.335937v5.0625c0 .135417.045573.248698.13672.339844.091145.091145.204426.136717.339843.136717h8.351563c.130208 0 .242187-.045572.335937-.136718.09375-.091147.140625-.204428.140625-.339845zm-2.21875-4.164063c0-.645833-.235677-1.196614-.70703-1.652343-.471355-.45573-1.040366-.683595-1.707033-.683595-.661458 0-1.227864.227865-1.699218.683594-.471354.455728-.707032 1.00651-.707032 1.652342 0 .645834.235678 1.196615.707032 1.652344.471354.45573 1.03776.683594 1.699218.683594.666667 0 1.235678-.227865 1.707032-.683594.471354-.45573.70703-1.00651.70703-1.652343zm2.21875-2.8125V1.875c0-.145833-.052083-.272135-.15625-.378906-.104167-.10677-.23177-.160157-.382813-.160157H8.742188c-.151042 0-.278646.053386-.382813.160157-.104167.10677-.15625.233073-.15625.378906v1.289063c0 .15104.052083.278645.15625.382812.104167.104167.23177.15625.382813.15625h1.359374c.151042 0 .278646-.052083.382813-.15625.104167-.104167.15625-.23177.15625-.382813zM12 1.539063v8.921876c0 .421874-.151042.783854-.453125 1.085937-.302083.302083-.664063.453125-1.085938.453125H1.539063c-.421876 0-.783855-.151042-1.085938-.453125C.151042 11.244792 0 10.882812 0 10.460937V1.539063C0 1.117187.151042.755208.453125.453124.755208.151042 1.117188 0 1.539063 0h8.921874c.421876 0 .783855.151042 1.085938.453125C11.848958.755208 12 1.117188 12 1.539063z"></path>
+         </symbol>
+         <symbol id=decor viewbox="0 0 50 8">
+            <path fill=#FFF fill-rule=evenodd d="M42.575736 6.575736h.848528l-6-6L37 .151472l-.424264.424264-6 6h.848528l-6-6L25 .151472l-.424264.424264-6 6h.848528l-6-6L13 .151472l-.424264.424264-6 6h.848528l-6-6-.848528.848528 6 6L7 7.848528l.424264-.424264 6-6h-.848528l6 6L19 7.848528l.424264-.424264 6-6h-.848528l6 6L31 7.848528l.424264-.424264 6-6h-.848528l6 6L43 7.848528l.424264-.424264 6-6-.848528-.848528"></path>
+         </symbol>
+         <symbol id=icon-mobile viewbox="140 34 12 18">
+            <path fill=#FFF fill-rule=evenodd d="M149 34h-6c-1.656 0-3 1.344-3 3v12c0 1.656 1.344 3 3 3h6c1.656 0 3-1.344 3-3V37c0-1.656-1.344-3-3-3zm-3 16.5c-.828 0-1.5-.6705-1.5-1.5s.672-1.5 1.5-1.5c.8295 0 1.5.6705 1.5 1.5s-.6705 1.5-1.5 1.5zm4.5-4.5h-9v-9h9v9z"></path>
+         </symbol>
+         <symbol id=icon-nav viewbox="0 0 28 20">
+            <path fill=#FFF d="M0 0h28v3H0V0zm0 8h28v3H0V8zm0 9h28v3H0v-3z"></path>
+         </symbol>
+         <symbol id=icon-nav-black viewbox="0 0 28 20">
+            <path fill=#000 d="M0 0h28v3H0V0zm0 8h28v3H0V8zm0 9h28v3H0v-3z"></path>
+         </symbol>
+         <symbol id=icon-duration viewbox="0 0 13 12">
+            <g fill=none fill-rule=evenodd>
+               <path fill=#31CC93 d="M11.098 11.468h-8.15c-.704 0-1.215-.505-1.215-1.2v-7.89c0-.686.511-1.183 1.215-1.183h8.15c.731 0 1.283.508 1.283 1.183v7.889c0 .673-.564 1.2-1.283 1.2z"></path>
+               <g fill=#000>
+                  <path d="M9.364 10.273h-8.15C.511 10.273 0 9.768 0 9.073v-7.89C0 .498.51 0 1.214 0h8.15c.732 0 1.284.509 1.284 1.183v7.89c0 .673-.564 1.2-1.284 1.2zM1.214.428c-.46 0-.77.304-.77.755v7.89c0 .455.317.772.77.772h8.15c.48 0 .84-.332.84-.773V1.183c0-.43-.36-.755-.84-.755h-8.15z"></path>
+                  <path d="M.222 2.996h10.204v.428H.222z"></path>
+                  <path d="M1.775 3.19h.444v6.869h-.444zm2.218 0h.444v6.869h-.444zm2.218 0h.444v6.869h-.444zm2.218 0h.444v6.869h-.444z"></path>
+                  <path d="M.222 8.133h10.204v.428H.222zm0-1.712h10.204v.428H.222zm0-1.712h10.204v.428H.222zM3.39 2.096a.582.582 0 0 1-.59-.57.58.58 0 0 1 .59-.57.58.58 0 0 1 .591.57c0 .314-.265.57-.59.57zm0-.713a.145.145 0 0 0-.147.143c0 .078.066.142.147.142a.145.145 0 0 0 .148-.142.145.145 0 0 0-.148-.143zm3.867.713a.582.582 0 0 1-.59-.57.58.58 0 0 1 .59-.57.58.58 0 0 1 .591.57c0 .314-.265.57-.59.57zm0-.713a.145.145 0 0 0-.147.143c0 .078.066.142.147.142a.145.145 0 0 0 .148-.142.145.145 0 0 0-.148-.143z"></path>
+               </g>
+            </g>
+         </symbol>
+         <symbol id=icon-altitude viewbox="0 0 17 12">
+            <g fill=none fill-rule=evenodd>
+               <path fill=#31CC93 stroke=#31CC93 stroke-width=1.186 d="M1.8 10.837L5.296 5.17 7.045 7.6 10.19.718l5.595 10.119z" stroke-linecap=round stroke-linejoin=round></path>
+               <g fill=#000>
+                  <path d="M.5 11.422a.271.271 0 0 1-.163-.056c-.14-.105-.179-.32-.088-.481l2.966-5.291a.297.297 0 0 1 .234-.158.286.286 0 0 1 .248.122l2.819 3.846a.387.387 0 0 1-.035.49c-.127.126-.316.107-.424-.04L3.5 6.366.753 11.264a.293.293 0 0 1-.252.158z"></path>
+                  <path d="M13.959 11.152a.291.291 0 0 1-.25-.154L8.581 2.183l-2.875 6.45c-.076.17-.257.238-.405.15-.147-.089-.205-.3-.13-.47L8.28 1.341a.302.302 0 0 1 .25-.187.296.296 0 0 1 .266.153l5.412 9.302a.384.384 0 0 1-.081.484.272.272 0 0 1-.168.059z"></path>
+                  <path d="M9.585 6.106h-.01a.286.286 0 0 1-.221-.126l-.694-.971-.466.712a.288.288 0 0 1-.236.139c-.092.008-.182-.048-.24-.133l-.721-1.064a.386.386 0 0 1 .05-.488c.13-.12.32-.094.423.058l.48.709.46-.703a.29.29 0 0 1 .233-.139.33.33 0 0 1 .237.126l.72 1.007.607-.742a.273.273 0 0 1 .425-.014c.12.132.126.353.012.492l-.84 1.028a.283.283 0 0 1-.219.109z"></path>
+               </g>
+            </g>
+         </symbol>
+         <symbol id=icon-time viewbox="0 0 13 12">
+            <g fill=none fill-rule=evenodd>
+               <path fill=#31CC93 d="M7.313.375c-3.137 0-5.688 2.59-5.688 5.774s2.551 5.774 5.688 5.774c3.135 0 5.687-2.59 5.687-5.774S10.448.375 7.313.375z"></path>
+               <g fill=#000>
+                  <path d="M10.07 9.819a.241.241 0 0 1-.157-.057.248.248 0 0 1-.03-.347 5.33 5.33 0 0 0 .915-5.15C10.06 2.138 8.07.71 5.843.71 3.613.71 1.62 2.142.885 4.276a5.344 5.344 0 0 0-.296 1.743 5.33 5.33 0 0 0 1.216 3.396.248.248 0 0 1-.032.347.242.242 0 0 1-.343-.032A5.833 5.833 0 0 1 .424 4.114C1.227 1.783 3.405.217 5.844.217c2.432 0 4.608 1.561 5.414 3.885.217.626.327 1.271.327 1.917a5.8 5.8 0 0 1-.566 2.51 5.795 5.795 0 0 1-.762 1.201.242.242 0 0 1-.188.089z"></path>
+                  <path d="M7.546 10.938H4.14a.74.74 0 0 1-.735-.743v-.978a.74.74 0 0 1 .735-.742h3.405a.74.74 0 0 1 .735.742v.978a.74.74 0 0 1-.735.743zM4.14 8.968a.25.25 0 0 0-.248.25v.977c0 .138.112.25.248.25h3.405a.249.249 0 0 0 .247-.25v-.978c0-.138-.11-.25-.247-.25H4.14zm7.201-2.739H9.91a.245.245 0 0 1-.244-.246c0-.137.11-.247.244-.247h1.432c.135 0 .244.11.244.247a.245.245 0 0 1-.244.246zm-9.504 0H.345a.245.245 0 0 1-.244-.246c0-.137.11-.247.244-.247h1.492c.135 0 .244.11.244.247 0 .136-.11.246-.244.246zm-.755 2.778a.247.247 0 0 1-.122-.46l1.289-.752a.242.242 0 0 1 .333.09.247.247 0 0 1-.09.337l-1.288.752a.238.238 0 0 1-.122.033zm6.787-6.323a.247.247 0 0 1-.21-.37l.707-1.238a.243.243 0 0 1 .332-.09.247.247 0 0 1 .09.336l-.709 1.24a.242.242 0 0 1-.21.122zm-2.026-.533a.245.245 0 0 1-.243-.246V.463c0-.136.109-.246.243-.246.135 0 .244.11.244.246v1.442a.245.245 0 0 1-.244.246zm-2.01.559a.244.244 0 0 1-.211-.123l-.723-1.265a.248.248 0 0 1 .09-.336.242.242 0 0 1 .333.09l.722 1.265a.248.248 0 0 1-.09.336.24.24 0 0 1-.12.033zM2.37 4.203a.24.24 0 0 1-.121-.033l-1.27-.74a.248.248 0 0 1-.088-.337.242.242 0 0 1 .333-.09l1.268.74a.248.248 0 0 1 .09.337.243.243 0 0 1-.212.123zm8.252 4.809a.242.242 0 0 1-.122-.033l-1.26-.731a.248.248 0 0 1-.09-.336.242.242 0 0 1 .332-.091l1.261.731a.248.248 0 0 1 .09.336.243.243 0 0 1-.211.124zM5.845 6.46a.243.243 0 0 1-.244-.242c0-.068.025-.133.069-.177a.254.254 0 0 1 .346 0 .28.28 0 0 1 .073.177c0 .06-.025.124-.073.173a.261.261 0 0 1-.171.069z"></path>
+                  <path d="M5.843 7.37c-.629 0-1.14-.518-1.14-1.154 0-.636.511-1.153 1.14-1.153.63 0 1.141.517 1.141 1.153s-.511 1.153-1.14 1.153zm0-1.814a.657.657 0 0 0-.653.66c0 .364.293.66.653.66.36 0 .654-.296.654-.66a.657.657 0 0 0-.654-.66z"></path>
+                  <path d="M6.597 5.97a.243.243 0 0 1-.205-.112.248.248 0 0 1 .073-.34L9.64 3.445a.243.243 0 0 1 .337.073.248.248 0 0 1-.073.34L6.73 5.931a.239.239 0 0 1-.132.04z"></path>
+               </g>
+            </g>
+         </symbol>
+         <symbol id=icon-price viewbox="0 0 13 12">
+            <g fill=none fill-rule=evenodd>
+               <path fill=#31CC93 d="M7.1.273c-3.154 0-5.72 2.63-5.72 5.863C1.38 9.37 3.947 12 7.1 12s5.72-2.63 5.72-5.864c0-3.233-2.566-5.863-5.72-5.863z"></path>
+               <g fill=#000>
+                  <path d="M5.808 11.687C2.768 11.687.293 9.091.293 5.9.293 2.708 2.767.112 5.808.112c3.04 0 5.514 2.596 5.514 5.788 0 3.19-2.473 5.787-5.514 5.787zm0-11.084C3.025.603.762 2.98.762 5.9s2.263 5.296 5.046 5.296c2.782 0 5.046-2.376 5.046-5.296 0-2.921-2.264-5.297-5.046-5.297z"></path>
+                  <path d="M5.762 8.905c-.565 0-1.347-.34-1.858-.807a.254.254 0 0 1-.023-.346.226.226 0 0 1 .33-.024c.428.39 1.095.685 1.55.685.7 0 1.27-.508 1.27-1.134 0-.508-.412-.86-1.335-1.144-.829-.272-1.672-.676-1.672-1.615 0-.896.78-1.626 1.738-1.626.616 0 1.191.31 1.502.807.07.114.04.266-.068.34a.228.228 0 0 1-.324-.07c-.225-.361-.65-.585-1.11-.585-.7 0-1.27.509-1.27 1.134 0 .507.376.828 1.34 1.145.713.218 1.667.625 1.667 1.614 0 .897-.78 1.626-1.737 1.626z"></path>
+                  <path d="M5.762 9.659a.24.24 0 0 1-.234-.246V2.386a.24.24 0 0 1 .234-.246.24.24 0 0 1 .234.246v7.027a.24.24 0 0 1-.234.246z"></path>
+               </g>
+            </g>
+         </symbol>
+         <symbol id=icon-weather viewbox="0 0 22 12">
+            <g fill=none fill-rule=evenodd>
+               <path fill=#31CC93 d="M17.813 11.896H7.38c-1.706 0-3.204-1.044-3.643-2.538-.413-1.402.207-2.796 1.619-3.673.487-2.288 2.563-3.931 5.002-3.931 1.128 0 2.2.354 3.11 1.024 1.94-.165 3.56.749 4.207 2.275 2.179-.035 4.078 1.531 4.078 3.421 0 1.855-1.804 3.422-3.94 3.422z"></path>
+               <path fill=#000 d="M14.793 10.26H4.361c-1.706 0-3.204-1.044-3.644-2.539-.412-1.402.207-2.795 1.62-3.673.485-2.288 2.563-3.93 5-3.93 1.128 0 2.2.353 3.111 1.024 1.939-.165 3.56.749 4.206 2.275 2.18-.035 4.078 1.53 4.078 3.42 0 1.856-1.804 3.423-3.94 3.423zM7.338.854c-2.116 0-3.91 1.464-4.268 3.48a.369.369 0 0 1-.182.255c-1.225.702-1.757 1.8-1.423 2.935.293.995 1.302 2 2.895 2h10.433c1.715 0 3.164-1.23 3.164-2.686 0-1.554-1.646-2.84-3.532-2.67a.377.377 0 0 1-.407-.256c-.36-1.088-1.556-2.268-3.64-2.022a.412.412 0 0 1-.295-.082A4.415 4.415 0 0 0 7.338.854z"></path>
+            </g>
+         </symbol>
+      </svg>
+      <header id=main-head class=main-head>
+         <div class=container>
+            <div class=row>
+               <a id=logo><img src=images/logo.png></a><!--<div class="sn">-->
+               <div class="social-info clearfix">
+                  <ul class=social>
+                     <li class=hidden-md-up>
+                        <a>
+                           <span>
+                              <svg>
+                                 <use xlink:href=#icon-mobile></use>
+                              </svg>
+                           </span>
+                        </a>
+                     </li>
+                     <li>
+                        <a>
+                           <span>
+                              <svg>
+                                 <use xlink:href=#icon-facebook></use>
+                              </svg>
+                           </span>
+                        </a>
+                     </li>
+                     <li>
+                        <a>
+                           <span>
+                              <svg>
+                                 <use xlink:href=#icon-twitter></use>
+                              </svg>
+                           </span>
+                        </a>
+                     </li>
+                     <li>
+                        <a>
+                           <span>
+                              <svg>
+                                 <use xlink:href=#icon-insta></use>
+                              </svg>
+                           </span>
+                        </a>
+                     </li>
+                     <li class="hidden-md-up icon-nav">
+                        <a>
+                           <span>
+                              <svg>
+                                 <use xlink:href=#icon-nav></use>
+                              </svg>
+                           </span>
+                        </a>
+                     </li>
+                  </ul>
+                  <a href="tel:+977 9806848760" class="phone hidden-md-down">+977 9806848760</a>
+               </div>
+               <!--/ .social-info-->
+               <div class=main-nav-wrap>
+                  <nav class=main-nav>
+                     <div class=primary-menu>
+                        <ul class=menu-primary>
+                           <li class="menu-item menu-item-has-children">
+                              <a>home</a>
+                              <ul class=sub-menu>
+                                 <li class=menu-item><a>where to go?</a></li>
+                                 <li class=menu-item><a>where to go?</a></li>
+                                 <li class=menu-item><a>where to go?</a></li>
+                              </ul>
+                           </li>
+                           <li class=menu-item><a>where to go?</a></li>
+                           <li class=menu-item><a>what to do?</a></li>
+                           <li class=menu-item><a>trip finder</a></li>
+                           <li class=menu-item><a>about us</a></li>
+                           <li class=menu-item><a>csr</a></li>
+                           <li class=menu-item><a>customize your trip</a></li>
+                        </ul>
+                     </div>
+                  </nav>
+                  <!--/.main-nav-->
+               </div>
+               <!--/.main-nav-wrap--><!--</div>--><!--/ .sn-->
+            </div>
+            <!--/.row-->
+         </div>
+         <!--/.container-->
+      </header>
+      <section class=inner-banner>
+         <picture>
+            <!--[if IE 9]>
+            <video style="display: none;">
+               <![endif]-->
+               <source srcset=images/uploads/slider-mobile.png media="(max-width: 480px)">
+               <source srcset=images/uploads/ipad-home.png media="(max-width: 768px)">
+               <!--[if IE 9]>
+            </video>
+            <![endif]--><img src=images/uploads/trip-banner.png>
+         </picture>
+      </section>
+      <!--/.inner-banner-->
+      <div class=top-triangle>
+         <div class=container></div>
+      </div>
+      <section class=trip-intro>
+         <div class=container>
+            <div class=row>
+               <div class="col-lg-11 offset-lg-1">
+                  <h1 class=heading>Gokyo Valley Trek</h1>
+                  <div class=trip__technical-details>
+                     <ul class=clearfix>
+                        <li class=detail__item>
+                           <span class=detail__item-icon>
+                              <svg>
+                                 <use xlink:href=#icon-duration></use>
+                              </svg>
+                           </span>
+                           <div class=detail__item-desc><span class=title>duration</span> 17 days</div>
+                        </li>
+                        <li class=detail__item>
+                           <span class=detail__item-icon>
+                              <svg>
+                                 <use xlink:href=#icon-price></use>
+                              </svg>
+                           </span>
+                           <div class=detail__item-desc><span class=title>usd</span> 17 days</div>
+                        </li>
+                        <li class=detail__item>
+                           <span class=detail__item-icon>
+                              <svg>
+                                 <use xlink:href=#icon-time></use>
+                              </svg>
+                           </span>
+                           <div class=detail__item-desc><span class=title>difficulty</span> 17 days</div>
+                        </li>
+                        <li class=detail__item>
+                           <span class=detail__item-icon>
+                              <svg>
+                                 <use xlink:href=#icon-weather></use>
+                              </svg>
+                           </span>
+                           <div class=detail__item-desc><span class=title>best season</span> 17 days</div>
+                        </li>
+                        <li class=detail__item>
+                           <span class=detail__item-icon>
+                              <svg>
+                                 <use xlink:href=#icon-altitude></use>
+                              </svg>
+                           </span>
+                           <div class=detail__item-desc><span class=title>max altitude</span> From 4,600 feet at Kathmandu to 18,519 feet at Kala Patthar</div>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <!--/.row-->
+         </div>
+         <!--/.container-->
+      </section>
+      <!--/.trip-intro-->
+      <nav class=tab-menu>
+         <div class=tab-mobile-nav>
+            <svg>
+               <use xlink:href=#icon-nav-black></use>
+            </svg>
+         </div>
+         <ul>
+            <li><a href=#tab-overview>trip overview</a></li>
+            <li><a href=#tab-itinerary>itinerary</a></li>
+            <li><a href=#tab-includes-excludes>includes</a></li>
+            <li><a href=#tab-accomodation>accomodation</a></li>
+            <li><a href=#tab-faq>faqs</a></li>
+            <li><a href=#tab-trip-notes>trip notes</a></li>
+            <li><a href=#tab-equipments>equipment</a></li>
+            <li><a href=#tab-departure-dates>departure dates</a></li>
+            <li><a href=#tab-trip-map>trip map</a></li>
+            <li><a href=#tab-gallery>gallery</a></li>
+            <li><a href=#tab-csr>csr</a></li>
+            <li><a href=#>book this trip</a></li>
+         </ul>
+      </nav>
+      <!--/.tab-menu-->
+      <section class=tab-content>
+         <div class=container>
+            <div class=row>
+               <div class="col-lg-10 offset-lg-1">
+                  <div class=tab-overview id=tab-overview>
+                     <h2 class=tab-heading>trip overview</h2>
+                     <p>The Gokyo Valley offers a complete experience of the Everest region as you will witness Himalayan lakes, forests, gorges and peaks all in one place. The whole place is like one big garden and it is a wonder how life can spring up this high in the mountains.</p>
+                     <p>The summit of the Gokyo Ri is considered to be the best vantage point for staring at the Himalayas so there is no doubt that you are in for a treat. The journey is a mix of trekking and mountaineering which will test your legs and body but scenes of life surviving at such a climate and with such elegance will please your senses. The Gokyo Ri route presents the Himalayas in a nutshell, packing everything you need out of an Himalayan expedition in 17 days.</p>
+                  </div>
+                  <!--/.tab-overview-->
+                  <div class=tab-itinerary id=tab-itinerary>
+                     <h2 class=tab-heading>Detail itinerary</h2>
+                     <ul class=itinerary-content>
+                        <li>
+                           <div class=day>day <span>01</span></div>
+                           <div class=itinerary__detail>
+                              <div class=small-heading>Arrival. Overnight at hotel.</div>
+                              <p>One of us will be there to pick you up as you land into Tribhuvan International Airport in Kathmandu. Stay overnight at your hotel where we will brief you on your big trip ahead while you muse on your Himalayan adventure of a lifetime.</p>
+                              <figure class=alignleft><img src=images/uploads/itinerary-img.png></figure>
+                              <figure><img src=images/uploads/itinerary-small.png></figure>
+                           </div>
+                        </li>
+                        <li>
+                           <div class=day>day <span>02</span></div>
+                           <div class=itinerary__detail>
+                              <div class=small-heading>Fly to Lukla and trek to Monjo. Overnight at guesthouse.</div>
+                              <p>A half-an-hour flight takes you to Lukla, a small tourist town overlooking Everest. Landing into the Tenzing-Hillary Airport at an altitude of 9,334 feet puts you officially inside the Everest Region from where you will begin your Everest Base Camp trek. We will start with a five-hour warmup trip downhill to Monjo village and rest for the day.</p>
+                              <div class="itinerary-testimonial hidden-xs-down">
+                                 <figure><img src=images/uploads/payas-dai.png></figure>
+                                 <p>“To my mind, the greatest reward and luxury of travel is to be able to experience everyday things as if for the first time, to be in a position in which almost nothing is so familiar it is taken for granted.”</p>
+                                 <span class=author>– Payas</span>
+                              </div>
+                           </div>
+                        </li>
+                        <li>
+                           <div class=day>day <span>04</span></div>
+                           <div class=itinerary__detail>
+                              <div class=small-heading>Trek to Namche.</div>
+                              <p>Not more than three hours of hiking and gaining 2,000 feet in altitude will get you to Namche Bazaar, a Sherpa town with probably more tourists than Sherpas. You will be entering into the Sagarmatha National Park and walking through suspension bridges over vertigo-inducing gorges to get there. You will find just about everything at Namche Bazaar so you might want to go for a last minute shopping or perhaps chill out at night club. While acclimatising to the freezing temperature and an elevation of 11,290 feet at Namche, you will get to meet travellers like yourself who are heading to or returning from Everest.</p>
+                           </div>
+                        </li>
+                     </ul>
+                  </div>
+                  <!--/.tab-itinerary-->
+                  <div class=tab-includes-excludes id=tab-includes-excludes>
+                     <div class=includes>
+                        <h2 class=tab-heading>Included in cost</h2>
+                        <ul>
+                           <li>Receive you from and drop you to the airport or hotel in our company vehicle.</li>
+                           <li>Stay at a three-star hotel in Kathmandu on a twin-sharing basis. Breakfast is on us.</li>
+                           <li>Sightseeing around Kathmandu in a private vehicle with our guide. All entrance fees will be paid.</li>
+                           <li>Stay at guesthouses during the trek on a twin-sharing basis. Breakfasts, lunches and dinners will also be taken care of.</li>
+                           <li>Local government-licensed guides.</li>
+                           <li>Porters (one each for a pair of travellers) and local support staff to help you trek.</li>
+                           <li>Fees for Sagarmatha National Park entering permit and Trekkers’ Information Management System card</li>
+                           <li>We will lend you a down jacket and a sleeping bag for throughout the trek.</li>
+                           <li>Fully paid round-trip tickets for Kathmandu-Lukla flight and back.</li>
+                           <li>A duffel bag, a sun hat and a t-shirt as a souvenir from us.</li>
+                           <li>A traditional Nepali feast with cultural shows as a farewell dinner.</li>
+                           <li>All tourist fees, government charges and other official expenses throughout the trip.</li>
+                        </ul>
+                     </div>
+                     <div class=excludes>
+                        <h2 class=tab-heading>Not included in cost</h2>
+                        <ul>
+                           <li>Receive you from and drop you to the airport or hotel in our company vehicle.</li>
+                           <li>Stay at a three-star hotel in Kathmandu on a twin-sharing basis. Breakfast is on us.</li>
+                           <li>Sightseeing around Kathmandu in a private vehicle with our guide. All entrance fees will be paid.</li>
+                           <li>Stay at guesthouses during the trek on a twin-sharing basis. Breakfasts, lunches and dinners will also be taken care of.</li>
+                           <li>Local government-licensed guides.</li>
+                           <li>Porters (one each for a pair of travellers) and local support staff to help you trek.</li>
+                           <li>Fees for Sagarmatha National Park entering permit and Trekkers’ Information Management System card</li>
+                           <li>We will lend you a down jacket and a sleeping bag for throughout the trek.</li>
+                           <li>Fully paid round-trip tickets for Kathmandu-Lukla flight and back.</li>
+                           <li>A duffel bag, a sun hat and a t-shirt as a souvenir from us.</li>
+                           <li>A traditional Nepali feast with cultural shows as a farewell dinner.</li>
+                           <li>All tourist fees, government charges and other official expenses throughout the trip.</li>
+                        </ul>
+                     </div>
+                  </div>
+                  <!--/.tab-includes-excludes-->
+                  <div class=tab-accomodation id=tab-accomodation>
+                     <h2 class=tab-heading>Accomodation during the Trip</h2>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a neque interdum diam dapibus tincidunt. In euismod risus nec pellentesque egestas. Morbi eget sollicitudin tortor, ac volutpat purus. Sed vestibulum elementum pharetra. Aenean suscipit placerat arcu, vel dignissim erat bibendum eu. Pellentesque egestas mi quis dui euismod condimentum vitae eget risus. Nullam nec nisl id risus tempor imperdiet. Vivamus quis mauris mollis nulla lobortis sollicitudin. Cras tincidunt nisi vel massa vehicula luctus. Suspendisse augue orci, rhoncus id sagittis vitae, porttitor eu sapien.</p>
+                  </div>
+                  <!--/.tab-accomodation-->
+                  <div class=tab-hotels id=tab-hotels>
+                     <h2 class=tab-heading>Hotels</h2>
+                     <p>Pellentesque egestas mi quis dui euismod condimentum vitae eget risus. Nullam nec nisl id risus tempor imperdiet. Vivamus quis mauris mollis nulla lobortis sollicitudin. Cras tincidunt nisi vel massa vehicula luctus. Suspendisse augue orci, rhoncus id sagittis vitae, porttitor eu sapien.</p>
+                     <div class=hotels>
+                        <div class=row>
+                           <div class="col-lg-4 hotel col-md-4 col-sm-6 col-xs-6">
+                              <img src=images/uploads/hotels.png> <span class=hotel__name>hotel annapurna</span>
+                              <p>Pellentesque egestas mi quis dui euismod condimentum vitae eget risus.</p>
+                           </div>
+                           <div class="col-lg-4 hotel col-md-4 col-sm-6 col-xs-6">
+                              <img src=images/uploads/hotels.png> <span class=hotel__name>hotel annapurna</span>
+                              <p>Pellentesque egestas mi quis dui euismod condimentum vitae eget risus.</p>
+                           </div>
+                           <div class="col-lg-4 hotel col-md-4 col-sm-6 col-xs-6">
+                              <img src=images/uploads/hotels.png> <span class=hotel__name>hotel annapurna</span>
+                              <p>Pellentesque egestas mi quis dui euismod condimentum vitae eget risus.</p>
+                           </div>
+                           <div class="col-lg-4 hotel col-md-4 col-sm-6 col-xs-6">
+                              <img src=images/uploads/hotels.png> <span class=hotel__name>hotel annapurna</span>
+                              <p>Pellentesque egestas mi quis dui euismod condimentum vitae eget risus.</p>
+                           </div>
+                           <div class="col-lg-4 hotel col-md-4 col-sm-6 col-xs-6">
+                              <img src=images/uploads/hotels.png> <span class=hotel__name>hotel annapurna</span>
+                              <p>Pellentesque egestas mi quis dui euismod condimentum vitae eget risus.</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <!--/.tab-hotels-->
+                  <div class=tab-faq id=tab-faq>
+                     <h2 class=tab-heading>faqs</h2>
+                     <div class=lds-accordion>
+                        <ul>
+                           <li>
+                              <div>What will a trekking trip with Mountain Kick involve?</div>
+                              <div class=accordion-content>You will trek in the Himalayas in a group of international travellers fully assisted by our guides, porters and local support staff. We will take care of your entire trip as soon as you land in Kathmandu and safely take to your preferred destination and back as per the package you choose (click here to view currently available tour packages). Travel will involve plenty of sightseeing and mixing with local culture.</div>
+                           </li>
+                           <li>
+                              <div>What will a trekking trip with Mountain Kick involve?</div>
+                              <div>You will trek in the Himalayas in a group of international travellers fully assisted by our guides, porters and local support staff. We will take care of your entire trip as soon as you land in Kathmandu and safely take to your preferred destination and back as per the package you choose (click here to view currently available tour packages). Travel will involve plenty of sightseeing and mixing with local culture.</div>
+                           </li>
+                           <li></li>
+                           <li></li>
+                           <li></li>
+                           <li></li>
+                        </ul>
+                     </div>
+                  </div>
+                  <!--/.tab-faq-->
+                  <div class=tab-trip-notes id=tab-trip-notes>
+                     <h2 class=tab-heading>Trip notes</h2>
+                     <ul>
+                        <li>You have to bring all your trekking equipment by yourself. See our standard equipment list here. If you forget anything, you can purchase these equipment in Kathmandu or rent it for the trip from us for a small fee.</li>
+                        <li>Please make sure you take a travel insurance at home before arriving here. It is mandatory and you cannot take it in Nepal. Your insurance agent will know which insurance plan suits your travel.</li>
+                        <li>It is advisable that you free up a few days before and after your trip schedule. For reasons beyond our control like flight delays, accidents and natural hazards, the itinerary may have to be altered. Please note that the flight to Lukla, the first step in your journey, is very vulnerable to weather shocks and it is common that flights are delayed or cancelled due to unfavourable weather.</li>
+                        <li>Please inform us and our guides if you have any medical condition that might affect your trip. Please consult your doctor beforehand for any precautions you need to take and always carry medicines if you need them. However, our guides and local support staff have been trained in basic medical intervention and your travel insurance covers any emergency rescue or evacuation.</li>
+                        <li>You may decide to alter your itinerary to some degree as long as there are no time constraints and everyone consents, if you are travelling in a group. Talk to us before embarking on the trip or you may also talk to our guides to see if we can arrange something. One thing we have learned from mountaineering all these years is however good you plan your journey, there are bound to be some improvisations to make our experience richer.</li>
+                     </ul>
+                  </div>
+                  <!--/.tab-trip-notes-->
+                  <div class=tab-equipments id=tab-equipments>
+                     <h2 class=tab-heading>Equipment List</h2>
+                     <h3>GENERAL</h3>
+                     <ol>
+                        <li>2 season sleeping bag – one. (You can hire one sleeping bag and one down jacket for the entire trip from us for USD 25)</li>
+                        <li>Spring down jacket – one. (You can hire one sleeping bag and one down jacket for the entire trip from us for USD 25)</li>
+                        <li>Duffel – one. (We will provide you one complementary duffel bag for you to keep.)</li>
+                        <li>35-45 liter daypack – one.</li>
+                        <li>Head</li>
+                        <li>Hat (shade hat or baseball cap). You can additionally tie a bandana around your head or neck. (Mountain Kick provides you a baseball cap as a complimentary gift.)</li>
+                        <li>Earmuffs. You can alternatively use balaclava, beanie, or hooded jacket which will be quite sufficient to keep you warm.</li>
+                        <li>Glacier glasses with side shields and 100% UV protection as you will face very intense sun rays at higher altitude with high UV radiation level. If you use prescription glasses, you can find glacier glasses with prescription lenses.</li>
+                        <li>Headlamp that use lithium batteries. (It is recommended you carry spare batteries.)</li>
+                     </ol>
+                     <p class="note m-t-3 m-b-3">Note: The lists have been prepared by our guides based on experience and are meant as suggestion for an average trekker. Each trekker will have his/her own preferences and necessities and we recommend to carry everything that you think you might need. You will find several options for each equipment and we advise to select the best match for your particular trip. You can purchase almost everything on the lists in Kathmandu and we are happy to help you choose.</p>
+                     <a href=# class="btn btn--arrow btn--bg-border--black m-r-3">view all equipment list</a> <a href=# class="btn btn--arrow btn--bg-border--black hidden-xs-down">download equipment list</a>
+                  </div>
+                  <!--/.tab-equipments-->
+                  <div class=tab-departure-dates id=tab-departure-dates>
+                     <ul class=clearfix>
+                        <li><a href=#fixed-dates>DEPATURE DATES</a></li>
+                        <li><a href=#private-dates>private dates</a></li>
+                        <li><a href=#tailor-made>customize your trip</a></li>
+                     </ul>
+                     <div id=fixed-dates>
+                        <table class=rwd-table>
+                           <tr>
+                              <th>DEPARTING</th>
+                              <th>DAYS</th>
+                              <th>STATUS</th>
+                              <th>COST</th>
+                              <th></th>
+                           </tr>
+                           <tr>
+                              <td data-th=DEPARTING>19th September, 2016</td>
+                              <td data-th=DAYS>12</td>
+                              <td data-th=STATUS class=booked>Booked</td>
+                              <td data-th=COST>$1,440.00</td>
+                              <td><a href=# class="btn btn--border-black btn--small">VIEW TRIP DETAIL</a></td>
+                           </tr>
+                           <tr>
+                              <td data-th=DEPARTING>19th September, 2016</td>
+                              <td data-th=DAYS>12</td>
+                              <td data-th=STATUS class=available>available</td>
+                              <td data-th=COST>Upon Request</td>
+                              <td><a href=# class="btn btn--border-black btn--small">VIEW TRIP DETAIL</a></td>
+                           </tr>
+                           <tr>
+                              <td data-th=DEPARTING>19th September, 2016</td>
+                              <td data-th=DAYS>12</td>
+                              <td data-th=STATUS class=available>available</td>
+                              <td data-th=COST>$1,440.00</td>
+                              <td><a href=# class="btn btn--border-black btn--small">VIEW TRIP DETAIL</a></td>
+                           </tr>
+                        </table>
+                     </div>
+                     <!--/#fixed-dates-->
+                     <div id=private-dates></div>
+                     <!--/#private-dates-->
+                     <div id=tailor-made></div>
+                     <!--/#tailor-made-->
+                  </div>
+                  <!--/.tab-departure-dates-->
+                  <h2 class="tab-heading text-lg-center" id=tab-trip-map>TRIP MAP</h2>
+               </div>
+            </div>
+         </div>
+         <!--/ .container-->
+         <div class=tab-trip-map>
+            <div class=map><img src=images/uploads/map.png></div>
+         </div>
+         <!--/.tab-trip-map-->
+         <div class=container>
+            <div class=row>
+               <div class="col-lg-8 offset-lg-2">
+                  <div class=trip-review>
+                     <div class="review__item clearfix">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a neque interdum diam dapibus tincidunt. In euismod risus nec pellentesque egestas. Morbi eget sollicitudin tortor, ac volutpat purus. Sed vestibulum elementum pharetra. Aenean suscipit placerat arcu, vel dignissim erat bibendum eu. Pellentesque egestas mi quis dui euismod condimentum vitae eget risus. Nullam nec nisl id risus tempor imperdiet. Vivamus quis mauris mollis nulla lobortis sollicitudin. Cras tincidunt nisi vel massa vehicula luctus. Suspendisse augue orci, rhoncus id sagittis vitae, porttitor eu sapien.</p>
+                        <img src=images/uploads/author.png>
+                        <div class=author><span class=author__name>John doe</span> <span class=author__address>united kingdom</span></div>
+                     </div>
+                     <!--/.review__item-->
+                     <div class="review__item clearfix">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a neque interdum diam dapibus tincidunt. In euismod risus nec pellentesque egestas. Morbi eget sollicitudin tortor, ac volutpat purus. Sed vestibulum elementum pharetra. Aenean suscipit placerat arcu, vel dignissim erat bibendum eu. Pellentesque egestas mi quis dui euismod condimentum vitae eget risus. Nullam nec nisl id risus tempor imperdiet. Vivamus quis mauris mollis nulla lobortis sollicitudin. Cras tincidunt nisi vel massa vehicula luctus. Suspendisse augue orci, rhoncus id sagittis vitae, porttitor eu sapien.</p>
+                        <img src=images/uploads/author.png>
+                        <div class=author><span class=author__name>radhe shyam</span> <span class=author__address>nepal</span></div>
+                     </div>
+                     <!--/.review__item-->
+                  </div>
+                  <!--/.trip-review-->
+               </div>
+               <div class="col-lg-10 offset-lg-1">
+                  <div class=tab-gallery id=tab-gallery>
+                     <h2 class=tab-heading>gallery</h2>
+                     <div class=social-share><img src=images/uploads/social.png></div>
+                     <ul class=clearfix>
+                        <li><img src=images/uploads/gallery-image.png></li>
+                        <li><img src=images/uploads/gallery-image.png></li>
+                        <li><img src=images/uploads/gallery-image.png></li>
+                        <li><img src=images/uploads/gallery-image.png></li>
+                        <li><img src=images/uploads/gallery-image.png></li>
+                        <li><img src=images/uploads/gallery-image.png></li>
+                        <li><img src=images/uploads/gallery-image.png></li>
+                        <li><img src=images/uploads/gallery-image.png></li>
+                        <li><img src=images/uploads/gallery-image.png></li>
+                        <li><img src=images/uploads/gallery-image.png></li>
+                        <li><img src=images/uploads/gallery-image.png></li>
+                        <li><img src=images/uploads/gallery-image.png></li>
+                        <li><img src=images/uploads/gallery-image.png></li>
+                        <li><img src=images/uploads/gallery-image.png></li>
+                        <li><img src=images/uploads/gallery-image.png></li>
+                     </ul>
+                  </div>
+                  <!--/.tab-gallery-->
+               </div>
+               <!--/.col-lg-9-->
+               <div class="tab-csr clearfix" id=tab-csr>
+                  <div class="col-lg-9 offset-lg-2">
+                     <h2 class=tab-heading>csr</h2>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a neque interdum diam dapibus tincidunt. In euismod risus nec pellentesque egestas. Morbi eget sollicitudin tortor, ac volutpat purus. Sed vestibulum elementum pharetra. Aenean suscipit placerat arcu, vel dignissim erat bibendum eu.</p>
+                     <a href=# class="btn btn--arrow btn--bg-border--black m-t-3">READ MORE ABOUT CSR</a>
+                  </div>
+                  <!--/.col-lg-9-->
+               </div>
+               <!--/.tab-csr-->
+            </div>
+            <!--/.row-->
+         </div>
+         <!--/.container-->
+      </section>
+      <!--/.tab-content-->
+      <section class=more-trip>
+         <div class=container>
+            <div class=col-lg-12>
+               <h2 class="section-heading text-lg-center">More Trip Inspiration</h2>
+            </div>
+         </div>
+         <div class=packages>
+            <div class=package>
+               <figure class=package__img><img src=images/uploads/culture.JPG></figure>
+               <div class="package__desc clearfix">
+                  <span class=package__desc-price>from usd <span class=price>1,205</span></span>
+                  <div class=package__desc-title>
+                     <span>12 Days trekking to 18,519 Ft</span>
+                     <h4><a>Jiri-Lukla Everest Three Passes Trek</a></h4>
+                  </div>
+               </div>
+            </div>
+            <!--/.package-->
+            <div class=package>
+               <figure class=package__img><img src=images/uploads/culture.JPG></figure>
+               <div class="package__desc clearfix">
+                  <span class=package__desc-price>from usd <span class=price>1,205</span></span>
+                  <div class=package__desc-title>
+                     <span>12 Days trekking to 18,519 Ft</span>
+                     <h4><a>Jiri-Lukla Everest Three Passes Trek</a></h4>
+                  </div>
+               </div>
+            </div>
+            <!--/.package-->
+            <div class=package>
+               <figure class=package__img><img src=images/uploads/culture.JPG></figure>
+               <div class="package__desc clearfix">
+                  <span class=package__desc-price>from usd <span class=price>1,205</span></span>
+                  <div class=package__desc-title>
+                     <span>12 Days trekking to 18,519 Ft</span>
+                     <h4><a>Jiri-Lukla Everest Three Passes Trek</a></h4>
+                  </div>
+               </div>
+            </div>
+            <!--/.package-->
+         </div>
+         <!--/.packages-->
+      </section>
+      <!--/.more-trip-->
+      <hr class=styled-hr>
+      <section class="customize-trip text-center">
+         <div class=container>
+            <div class=row>
+               <div class=col-md-12>
+                  <span class=heading-top>Would you like to go on your own customized trip?</span>
+                  <h2 class="section-heading m-b-3">We are always there for you</h2>
+                  <a href=# class="btn btn--arrow btn--bg-border--black m-t-2">contact us</a>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!--/.customize-trip-->
+      <section class="home-blog footer-blog text-center">
+         <div class=container>
+            <div class=row>
+               <div class="col-md-12 m-b-4">
+                  <h2 class=section-heading>RECENT FROM OUR BLOG</h2>
+                  <span class=slogan>LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT. DONEC A NEQUE INTERDUM DIAM DAPIBUS TINCIDUNT.</span>
+               </div>
+               <div class="general-box col-md-4 col-sm-6">
+                  <figure class=general-box__img><img src=images/uploads/general-img.png></figure>
+                  <div class=general-box__desc>
+                     <h6><a>TRAVEL</a></h6>
+                     <h4><a>CHoose THE PERFECT ACCOMMODATIONS</a></h4>
+                     <p>family a chance to vacation to the most exotic locations all over the world at a fraction.</p>
+                  </div>
+               </div>
+               <!--/.general-box-->
+               <div class="general-box col-md-4 col-sm-6">
+                  <figure class=general-box__img><img src=images/uploads/general-img.png></figure>
+                  <div class=general-box__desc>
+                     <h6><a>TRAVEL</a></h6>
+                     <h4><a>CHoose THE PERFECT ACCOMMODATIONS</a></h4>
+                     <p>family a chance to vacation to the most exotic locations all over the world at a fraction.</p>
+                  </div>
+               </div>
+               <!--/.general-box-->
+               <div class="general-box col-md-4 col-sm-6">
+                  <figure class=general-box__img><img src=images/uploads/general-img.png></figure>
+                  <div class=general-box__desc>
+                     <h6><a>TRAVEL</a></h6>
+                     <h4><a>CHoose THE PERFECT ACCOMMODATIONS</a></h4>
+                     <p>family a chance to vacation to the most exotic locations all over the world at a fraction.</p>
+                  </div>
+               </div>
+               <!--/.general-box-->
+            </div>
+         </div>
+      </section>
+      <!--/.home-blog-->
+      <footer id=footer class=footer>
+         <div class=container>
+            <div class=row>
+               <div class=col-md-12>
+                  <address class="address col-lg-3 col-md-6 col-sm-6">
+                     <h5>mountainkick pvt.ltd.</h5>
+                     P.O.Box: 25181<br>Thamel, Kathmandu, Nepal<br>Phone: +977-01-4250540<br>Cell Phone: +977-9851014405<br>Email: <a href=mailto:info@mountainkick.com>info@mountainkick.com</a>
+                  </address>
+                  <div class="subscribe-form col-lg-4 col-md-6 col-sm-6">
+                     <form method=post enctype=multipart/form-data id=gform_3>
+                        <div class=gform_heading>
+                           <h3 class=gform_title>MAILING LIST</h3>
+                           <span class=gform_description>Subscribe to our newsletter for access to new trips, travel tips and exclusive deals for your next vacation</span>
+                        </div>
+                        <div class=gform_body>
+                           <ul class=gform_fields>
+                              <li class=gfield>
+                                 <label class=gfield_label for=input_3_1>Email</label>
+                                 <div class="ginput_container ginput_container_email"><input name=input_1 id=input_3_1 type=text class=medium tabindex=1 placeholder="Your email address"></div>
+                              </li>
+                           </ul>
+                        </div>
+                        <div class="gform_footer top_label"><input type=submit id=gform_submit_button_3 class="gform_button button" value=subscribe tabindex=2></div>
+                     </form>
+                  </div>
+                  <!--/.subscribe-form-->
+                  <div class="social-media clearfix col-lg-2 col-md-4 col-sm-6">
+                     <h5>connect with mk</h5>
+                     <ul class=social>
+                        <li class=facebook>
+                           <a>
+                              <span>
+                                 <svg>
+                                    <use xlink:href=#icon-facebook></use>
+                                 </svg>
+                              </span>
+                           </a>
+                        </li>
+                        <li class=twitter>
+                           <a>
+                              <span>
+                                 <svg>
+                                    <use xlink:href=#icon-twitter></use>
+                                 </svg>
+                              </span>
+                           </a>
+                        </li>
+                        <li class=instagram>
+                           <a>
+                              <span>
+                                 <svg>
+                                    <use xlink:href=#icon-insta></use>
+                                 </svg>
+                              </span>
+                           </a>
+                        </li>
+                     </ul>
+                  </div>
+                  <!--/.social-media-->
+                  <div class="associates col-lg-3 col-md-6 col-xs-12">
+                     <h5>member of</h5>
+                     <ul>
+                        <li><a><img src=images/uploads/ntb.png></a></li>
+                        <li><a><img src=images/uploads/nma.png></a></li>
+                        <li><a><img src=images/uploads/doftourisoum.png></a></li>
+                        <li><a><img src=images/uploads/taan.png></a></li>
+                     </ul>
+                  </div>
+                  <!--/.associates-->
+               </div>
+            </div>
+         </div>
+         <!--/.container-->
+         <div class=copyright-designer>
+            <div class=container>
+               <div class=designby>Crafted by <a>Last Door Solutions</a></div>
+               <p>© 2016 <a>MountainKick</a>. All Rights Reserved</p>
+            </div>
+         </div>
+         <!--/.copyright-->
+      </footer>
+      <!--/#footer--><script type=text/javascript src=js/scripts.js></script><script type=text/javascript src=js/main.js></script>
+   </body>
+</html>
