@@ -103,5 +103,5 @@
  <!--/ .contact-methods-->
 </section>
 <!--/.trip-intro-->
-
+<?php // Footer section ?>
 <?php get_footer(); ?>
