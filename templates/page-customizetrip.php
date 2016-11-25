@@ -73,7 +73,7 @@
                          <use xlink:href=#icon-mail></use>
                       </svg>
                    </span>
-                   <br>SEND US AN EMAIL
+                   <br><?php _e("SEND US AN EMAIL",'mountainkick'); ?>
                 </div>
              </a>
              <a href=tel:<?php echo preg_replace( '/[^+0-9]/', '', get_field('phone','option') ); ?> class=box>
@@ -83,7 +83,7 @@
                          <use xlink:href=#icon-call></use>
                       </svg>
                    </span>
-                   <br>talk us by phone
+                   <br><?php _e("talk us by phone",'mountainkick'); ?>
                 </div>
              </a>
              <a href=# class=box>
@@ -93,7 +93,7 @@
                          <use xlink:href=#icon-form></use>
                       </svg>
                    </span>
-                   <br>fill out a form
+                   <br><?php _e("fill out a form",'mountainkick'); ?>
                 </div>
              </a>
           </div>
