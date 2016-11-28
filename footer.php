@@ -8,7 +8,6 @@
  *
  * @package mountainkick
  */
-
 ?>
 
 <footer id=footer class=footer>
