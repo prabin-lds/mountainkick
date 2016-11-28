@@ -14,7 +14,7 @@
 				$bannerImage[0] = get_template_directory_uri().'/images/uploads/trip-banner.png';
 
 		?>
-		<img src="<?php echo $bannerImage[0]; ?>">		
+		<img src="<?php echo $bannerImage[0]; ?>" alt="<?php the_title(); ?>">
 	</picture>
 	<?php if( is_page_template('templates/page-home.php') ): ?>
 		<div class=banner-text><?php the_title(); ?></div>
