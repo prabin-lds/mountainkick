@@ -22,15 +22,3 @@
    </div>
    <!--/.col-lg-9-->
 <?php endif; ?>
-
-
-<script>
-   stWidget.addEntry({   
-           "url":"<?php the_permalink(); ?>",
-           "title":"<?php the_title(); ?>",
-           "type":"large",
-           "text":"ShareThis",
-           "image":"<?php echo wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'thumb' ); ?>",
-           "summary":"<?php the_content(); ?>"
-   });
-</script>

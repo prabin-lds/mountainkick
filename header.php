@@ -16,12 +16,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Social Share -->
-<meta property="og:url" content="Your Leadpages URL"/>
-<meta property="og:title" content="The title of your page"/>
-<meta property="og:image" content="URL of the image you'd like to use"/>
-<meta property="og:description" content="Your description" />
-<meta property="og:type" content="website"/>
-<link rel="profile" href="http://gmpg.org/xfn/11">
+	<?php $ogImage = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'thumb' ); ?>
+	<meta property="og:url" content="<?php the_permalink(); ?>"/>
+	<meta property="og:title" content="<?php the_title(); ?>"/>
+	<meta property="og:image" content="<?php echo $ogImage[0]; ?>"/>
+	<meta property="og:description" content="<?php the_field('overview_content'); ?>" />
+	<meta property="og:type" content="website"/>
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+<!-- / Social Share -->
 
 <?php wp_head(); ?>
 </head>
